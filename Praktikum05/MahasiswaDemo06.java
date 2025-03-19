@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MahasiswaMain06 {
+public class MahasiswaDemo06 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         MahasiswaBerprestasi06 list = new MahasiswaBerprestasi06();
