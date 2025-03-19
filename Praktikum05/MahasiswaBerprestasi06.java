@@ -1,8 +1,8 @@
 public class MahasiswaBerprestasi06 {
-    Mahasiswa06 [] listMhs = new Mahasiswa06[5];
+    Mahasiswa06[] listMhs = new Mahasiswa06[5];
     int idx;
 
-    void tambah (Mahasiswa06 mhs) {
+    void tambah(Mahasiswa06 mhs) {
         if (idx < listMhs.length) {
             listMhs[idx] = mhs;
             idx++;
@@ -23,10 +23,24 @@ public class MahasiswaBerprestasi06 {
             for (int j = 1; j < listMhs.length - i; j++) {
                 if (listMhs[j].ipk > listMhs[j - 1].ipk) {
                     Mahasiswa06 tmp = listMhs[j];
-                    listMhs[j] = listMhs[j -1];
+                    listMhs[j] = listMhs[j - 1];
                     listMhs[j - 1] = tmp;
                 }
             }
+        }
+    }
+
+    void selectionSort() {
+        for (int i = 0; i < listMhs.length; i++) {
+            int idxMin = i;
+            for (int j = i + 1; j < listMhs.length; j++) {
+                if (listMhs[j].ipk < listMhs[idxMin].ipk) {
+                    idxMin = j;
+                }
+            }
+            Mahasiswa06 tmp = listMhs[idxMin];
+            listMhs [idxMin] = listMhs[i];
+            listMhs[i] = tmp;
         }
     }
 }
